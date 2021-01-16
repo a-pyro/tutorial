@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// index.js => javascript entry point for the app
+
+import React from 'react'; // needed to create a component
+import ReactDOM from 'react-dom'; // to render the app in the index.html
+
+//Stateless functional components! => DUMB Component (dont have state)
+function Greeting() {
+    //components need to be capitalized to be rendered!
+    return (
+        <main>
+            <h1>Ardi's first suca: 🚀! </h1>
+        </main>
+    ); //always return JSX
+}
+
+//alternative to returning JSX
+/* const Greeting = () => {
+    return React.createElement('h1', {}, 'hello');
+}; */
+
+/* const Greeting = () => {
+    return React.createElement(
+        'div',
+        {},
+        React.createElement('h1', {}, 'hello')
+    );
+}; */
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <React.StrictMode>
+        <Greeting />
+    </React.StrictMode>,
+    document.getElementById('root')
+); // inject the js app in the index.html
